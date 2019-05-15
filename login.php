@@ -28,7 +28,7 @@
 		<br><a href="signup.php">Sign up</a><br>
       </label>
     </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <a href="index.php" button type="submit" class="btn btn-primary">Sign in</button>
   </form>
 </div>
 
