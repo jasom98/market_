@@ -1,11 +1,10 @@
-<?php
-    
-    include("database.php");
+<?php	
+	include("database.php");
 
-    $firstname=$_POST['uname'];
-    $lastname=$_POST['ulastname'];
+	$firstname=$_POST['uname'];
+	$lastname=$_POST['ulastname'];
 	$gender = $_POST['gender'];
-    $email=$_POST['uemail'];
+	$email=$_POST['uemail'];
 	
 	if ($gender == "M")
 		$photo = "images/boy.png";
@@ -32,6 +31,4 @@
 		echo "<script language='javascript'>alert('Usuario ya existe')</script>";
 		header("Refresh:0;url=login.php");
 	}	
-	
-
 ?>
