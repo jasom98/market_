@@ -19,7 +19,7 @@
 		 alert("Las Contraseñas No Son Iguales")
 
   }
-  function validartipofoto(){
+ /* function validartipofoto(){
 	  $max=2000000;// 2Mb)
 	  $filesize = $_FILES['upfile']['size'];
 	  $filename = trim($_FILES['upfile']['name']); 
@@ -45,7 +45,7 @@
 				else {
 				print("<br><br>La imagen que ha intentado adjuntar es mayor de 1.5 Mb, si desea cambie el tamaño del archivo y vuelva a intentarlo.");
 		}
-  }
+  } */
   
   </script>  
 </head>
@@ -67,7 +67,7 @@
 	  <div class="invalid-feedback">Please fill out this field.</div>
 	</div>
 	<div class="form-group">
-	  <label for="uname">Identificacion:</label>
+	  <label for="idced">Identificacion:</label>
 	  <input type="number" class="form-control" id="idced" placeholder="Enter id" name="idced" required>
 	  <div class="valid-feedback">Valid.</div>
 	  <div class="invalid-feedback">Please fill out this field.</div>
@@ -104,7 +104,7 @@
 	</div>
 	<div class="form-group">
     <label for="foto">Imagen de Perfil:</label>
-    <input type="file" class="form-control" id="upfile" name="upfile" value="Examinar" >
+    <input type="file" class="form-control" id="photo" name="photo" value="Examinar" accept="image/png, .jpeg, .jpg, image/gif">
   </div>
 	<button type="button" class="btn btn-primary" onClick="validarclave()" onClick="validartipofoto">Register</button>
 	

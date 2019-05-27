@@ -14,6 +14,7 @@
 				<tr>
 					<th>Firstname</th>
 					<th>Lastname</th>
+					<th>ID</th>
 					<th>Email</th>
 					<th>Photo</th>
 				</tr>
@@ -31,6 +32,7 @@
 		  while ($row = $result->fetch_assoc()) {
 			  echo "<tr><td>".$row['firstname']."</td>";
 			  echo "<td>".$row['lastname']."</td>";
+			  echo "<td>".$row['identification']."</td>";
 			  echo "<td>".$row['email']."</td>";
 			  echo "<td align='center'><img src=".$row['photo']." width=50></td></tr>";
 		  }
