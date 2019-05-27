@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-05-2019 a las 18:51:47
--- Versión del servidor: 10.1.29-MariaDB
--- Versión de PHP: 7.2.0
+-- Tiempo de generación: 27-05-2019 a las 06:15:38
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -56,7 +56,8 @@ INSERT INTO `productos` (`item`, `codprod`, `nomprod`, `cantprod`, `pcosto`, `im
 (22, '10230029', 'TEJA MARCOLITA TIPO ZINC N 12 GERFOR 3.66 M', 12, 38630, ''),
 (23, '10230030', 'TEJA MARCOLITA TIPO ZINC N 10 GERFOR 3.06 M', 10, 33902, ''),
 (24, '10230031', 'TEJA MARCOLITA TIPO ZINC N 8 GERFOR 2.44 M', 9, 25827, ''),
-(25, '10230032', 'ALAMBRE CENTELSA N 14 X 100 M', 6, 73000, '');
+(25, '10230032', 'ALAMBRE CENTELSA N 14 X 100 M', 6, 73000, ''),
+(27, 'ola jsah', 'JADHKSHKJADHK', 113, 12456, 'fondo.gif');
 
 -- --------------------------------------------------------
 
@@ -68,6 +69,7 @@ CREATE TABLE `usuarios` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `firstname` varchar(30) COLLATE utf8_bin NOT NULL,
   `lastname` varchar(30) COLLATE utf8_bin NOT NULL,
+  `identification` bigint(30) NOT NULL,
   `gender` varchar(1) COLLATE utf8_bin NOT NULL,
   `email` varchar(50) COLLATE utf8_bin NOT NULL,
   `password` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -78,14 +80,15 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `firstname`, `lastname`, `gender`, `email`, `password`, `photo`) VALUES
-(6, 'Peter', 'McDonald', '', 'peter@gmail.com', '$2y$10$HiZIR8WgxNdF617V2eve5uN4C.xnwbfJQrGX7u/c9d1', NULL),
-(7, 'John', 'Martinez', '', 'john@gmail.com', '$2y$10$S1ggaP9sFaD35Dl17ngEIO2s5eIk/Tbr5Vkz3blBzcq', 'images/img_default.png'),
-(8, 'Kelly', 'Sofia', '', 'kelly@gmail.com', '$2y$10$Avu4GfGY50v05pO0KI2HEO/fx9lWSi0wrNiUGgN0.rs', 'images/img_default.png'),
-(9, 'Mario', 'Urbano', '', 'mario@gmail.com', '$2y$10$dLgScJ0TRDZgI3tJd0XKsOKCPQp39qaiKLezXKkOwtG', 'images/boy.png'),
-(10, 'Juliana', 'Eraso', '', 'juliana@hotmail.com', '$2y$10$AhbgNvMj1ZUiQYSnegc/TuAPKFFG2uywVqsgapGp40n', 'images/boy.png'),
-(11, 'Sofia', 'Lasso', '', 'sofia@gmail.com', '$2y$10$oRdNTVaX.K9LR6ON91Sqj.AxuefYzJrkoduRV6Bn5ds', 'images/girl.png'),
-(12, 'Mariana', 'Korbe', '', 'mariana@yahoo.es', '$2y$10$5Q1ObjUEc5aziXySqmFfmuw9fnRWxTtn9H34OYvt.yM', 'images/img_default.png');
+INSERT INTO `usuarios` (`id`, `firstname`, `lastname`, `identification`, `gender`, `email`, `password`, `photo`) VALUES
+(18, 'jason', 'Martinez', 0, '', 'jasom98@gmail.com', '$2y$10$hiPBWXqgNuOTvPV5W.LD5.SBnzlKl9J65LQZuSwE4Mi', 'images/boy.png'),
+(19, 'sjksj', 'kjslkajslkj', 0, '', 'jash@aj.co', '$2y$10$ph3/0Ejkf73KuPxA92MZtO5hvVU1H2Gad9BoViNZRl0', 'images/boy.png'),
+(20, 'kadjskjjfoeii', 'dlkasÃ±bfobafs{obi', 0, '', 'qe@jak.co', '$2y$10$UxmvAYLh8gDaAG7K.QYxGeuLDFe.vUgcZy6kVn7lp/n', 'images/boy.png'),
+(21, 'hfgkfahkj', 'jlkasdjlj', 12355, '', 'jas@kja.xsw', '$2y$10$L2zgDo1QEvKxAK/ZRdHAPOg.avIc1VGheaSTZ47KL25', 'images/boy.png'),
+(22, 'dankadsjiih', 'iijijgg', 12383, '', 'jahs6@jkak.com', '$2y$10$nW8PiVCgLoZv3xvdGx/7NeswfSIvHQmflfOY5ZuZGcI', 'images/boy.png'),
+(23, '', '', 0, '', '', '', 'profiles/'),
+(24, 'dassd', 'kadjhkdja', 121322, '', 'akjhkdasjk@aasj.co', '$2y$10$O0mPINShlHBcJZ1ZKz3x/.i364e7dookregQJGF1gMC', 'profiles/'),
+(25, 'jljlkjklkjlkl', 'kljlkjkjlk', 12, '', 'kjkl@alk.co', '$2y$10$DgtKrIRZFJGWTx1Mc5fK2ub3CbQskn3FGb/gYm6m/GB', 'profiles/');
 
 --
 -- Índices para tablas volcadas
@@ -113,13 +116,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `item` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
